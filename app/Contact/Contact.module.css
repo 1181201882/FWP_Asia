@@ -1,0 +1,57 @@
+/* Apply these styles to the input wrapper div */
+.relative {
+  position: relative;
+}
+
+/* Apply these styles to the input field */
+input[type="text"],
+input[type="email"],
+textarea {
+  border: none;
+  background: transparent;
+  padding: 0.32rem 0.3rem;
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.6;
+  outline: none;
+  transition: all 0.2s ease-linear;
+}
+
+/* Apply these styles to the label */
+label {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0.3rem; /* Adjust the left position as needed */
+  margin-bottom: 0;
+  max-width: 90%;
+  overflow: hidden;
+  padding-top: 0.37rem;
+  line-height: 1.6;
+  transition: all 0.2s ease-out;
+  opacity: 0.5; /* Initial opacity for hint text */
+  transform: translateY(0);
+}
+
+/* Apply these styles when the input is in focus */
+input[type="text"]:focus + label,
+input[type="email"]:focus + label,
+textarea:focus + label {
+  opacity: 1; /* Show the label */
+  transform: translateY(-0.9rem); /* Move the label up */
+}
+
+/* Apply these styles when the input has content */
+input[type="text"]:not(:placeholder-shown) + label,
+input[type="email"]:not(:placeholder-shown) + label,
+textarea:not(:placeholder-shown) + label {
+  opacity: 1; /* Keep the label visible if there is content */
+  transform: translateY(
+    -0.9rem
+  ); /* Keep the label moved up if there is content */
+}
+
+/* Apply these styles to adjust the label text color */
+.text-primary {
+  color: #007bff; /* Change to your desired label text color */
+}
